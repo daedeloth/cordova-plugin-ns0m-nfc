@@ -772,6 +772,9 @@ public class NfcPlugin extends CordovaPlugin {
             } catch (IllegalAccessException e) {
                 Log.e(TAG, e.getMessage(), e);
                 callbackContext.error(e.getMessage());
+            } catch (SecurityException e) {
+                Log.e(TAG, e.getMessage(), e);
+                callbackContext.error(e.getMessage());
             } catch (InvocationTargetException e) {
                 Log.e(TAG, e.getMessage(), e);
                 callbackContext.error(e.getMessage());
@@ -791,6 +794,8 @@ public class NfcPlugin extends CordovaPlugin {
             // ignore
         } catch (IllegalAccessException e) {
             // ignore
+		} catch (SecurityException e) {
+			// ignore
         } catch (InvocationTargetException e) {
             // ignore
         }
@@ -857,6 +862,9 @@ public class NfcPlugin extends CordovaPlugin {
                 Log.e(TAG, e.getMessage(), e);
                 callbackContext.error(e.getMessage());
             } catch (IllegalAccessException e) {
+                Log.e(TAG, e.getMessage(), e);
+                callbackContext.error(e.getMessage());
+            } catch (SecurityException e) {
                 Log.e(TAG, e.getMessage(), e);
                 callbackContext.error(e.getMessage());
             } catch (InvocationTargetException e) {
